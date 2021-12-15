@@ -1,0 +1,11 @@
+.footer p {
+  margin-top: -5rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: hsl(233, 14%, 35%);
+}
+
+.footer p.light_mode {
+  color: var(--color-text-light-todo);
+}

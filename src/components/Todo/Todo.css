@@ -1,0 +1,14 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.todo_container {
+  transform: translateY(-20%);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 50%;
+  }
+}

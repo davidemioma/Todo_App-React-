@@ -1,0 +1,10 @@
+.todo_list-container {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(0, 0%, 100%);
+}
+
+.todo_list {
+  list-style: none;
+  color: #fff;
+  background: hsl(235, 24%, 19%);
+}

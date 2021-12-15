@@ -1,0 +1,31 @@
+.todo_box {
+  padding: 2rem;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  color: hsl(233, 14%, 35%);
+  background-color: hsl(235, 24%, 19%);
+}
+
+.sorting_todo {
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.sorting_todo div {
+  display: flex;
+  gap: 2rem;
+}
+
+.sorting_todo button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 1.4rem;
+}
+
+.sorting_todo button:hover {
+  color: hsl(220, 98%, 61%);
+}

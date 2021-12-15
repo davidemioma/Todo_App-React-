@@ -1,0 +1,33 @@
+.todo_box {
+  padding: 2rem;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  color: hsl(233, 14%, 35%);
+  background-color: hsl(235, 24%, 19%);
+}
+
+.create_todo {
+  margin-bottom: 3rem;
+  border-radius: 10px;
+}
+
+.tick_create {
+  display: inline-flex;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 1px solid hsl(233, 14%, 35%);
+  background: none;
+  margin-right: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_input {
+  background: none;
+  border: none;
+  outline: 0;
+  color: hsl(233, 14%, 35%);
+  font-size: 1.8rem;
+}

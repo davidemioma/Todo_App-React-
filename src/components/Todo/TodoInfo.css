@@ -1,0 +1,30 @@
+.todo_box {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  color: hsl(233, 14%, 35%);
+  background-color: hsl(235, 24%, 19%);
+}
+
+.info {
+  justify-content: space-between;
+}
+
+.info span {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.clear_completed {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  color: hsl(233, 14%, 35%);
+  font-size: 1.4rem;
+}
+
+.clear_completed:hover {
+  color: hsl(220, 98%, 61%);
+}

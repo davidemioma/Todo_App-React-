@@ -1,0 +1,37 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 2rem 0 13rem 0;
+  background-image: url(../images/bg-mobile-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_logo {
+  content: url(../images/icon-sun.svg);
+}
+
+.nav_title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 50%;
+  }
+
+  .header {
+    background-image: url(../images/bg-desktop-dark.jpg);
+  }
+}
