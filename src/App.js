@@ -15,12 +15,18 @@ function App() {
 
   const addNewTodo = (todo) => {
     setTodosArr((prevTodo) => {
-      return [todo, ...prevTodo];
+      const updatedTodo = [...prevTodo];
+      updatedTodo.unshift({
+        value: todo,
+        isActive: false,
+        id: Math.random().toString(),
+      });
+      return updatedTodo;
     });
-    console.log(todo);
   };
 
-  const deleteNewTodo = (todoID) => {
+  const deleteTodo = (todoID) => {
+    console.log(todoID);
     setTodosArr((prevTodo) => {
       const updatedTodo = prevTodo.filter((todo) => todo.id !== todoID);
       return updatedTodo;
@@ -34,7 +40,7 @@ function App() {
         onNewTodo={addNewTodo}
         items={todosArr}
         itemsLeft={todosArr.length}
-        onDeleteItem={deleteNewTodo}
+        onDeleteTodo={deleteTodo}
       />
       <Footer />
     </body>

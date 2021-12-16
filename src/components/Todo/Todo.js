@@ -9,12 +9,7 @@ function Todo(props) {
   const [filterValue, setFilterValue] = useState("all");
 
   const savedDataHandler = (todo) => {
-    const enteredData = {
-      ...todo,
-      isActive: false,
-      id: Math.random().toString(),
-    };
-    props.onNewTodo(enteredData);
+    props.onNewTodo(todo);
   };
 
   const getFilteredValue = (value) => {
@@ -25,7 +20,7 @@ function Todo(props) {
   return (
     <div className="todo_container container">
       <NewTodo onSavedData={savedDataHandler} />
-      <TodoList items={props.items} onDeleteItem={props.onDeleteItem} />
+      <TodoList items={props.items} onDeleteItem={props.onDeleteTodo} />
       <TodoInfo itemsLeft={props.itemsLeft} />
       <TodoFilter onFilterSelected={getFilteredValue} />
     </div>

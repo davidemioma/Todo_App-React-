@@ -11,9 +11,7 @@ function NewTodo(props) {
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    const enteredData = { value: value };
-
-    props.onSavedData(enteredData);
+    props.onSavedData(value);
 
     setValue("");
   };
