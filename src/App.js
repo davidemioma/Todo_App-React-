@@ -20,6 +20,13 @@ function App() {
     console.log(todo);
   };
 
+  const deleteNewTodo = (todoID) => {
+    setTodosArr((prevTodo) => {
+      const updatedTodo = prevTodo.filter((todo) => todo.id !== todoID);
+      return updatedTodo;
+    });
+  };
+
   return (
     <body>
       <Header />
@@ -27,6 +34,7 @@ function App() {
         onNewTodo={addNewTodo}
         items={todosArr}
         itemsLeft={todosArr.length}
+        onDeleteItem={deleteNewTodo}
       />
       <Footer />
     </body>

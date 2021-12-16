@@ -2,17 +2,7 @@ import "./TodoItem.css";
 
 function TodoItem(props) {
   const removeItem = (e) => {
-    const item = e.target;
-
-    const parent = item.parentElement;
-
-    if (item.classList.contains("remove_item")) {
-      parent.classList.add("fall");
-
-      parent.addEventListener("transitionend", function () {
-        parent.remove();
-      });
-    }
+    props.onDelete(props.id);
   };
 
   const tickItem = (e) => {
