@@ -4,16 +4,15 @@ import TodoItem from "./TodoItem";
 function TodoList(props) {
   return (
     <div className="todo_list-container">
-      <ul className="todo_list">
-        {props.items.map((item) => (
-          <TodoItem
-            key={item.id}
-            id={item.id}
-            value={item.value}
-            onDelete={props.onDeleteItem}
-          />
-        ))}
-      </ul>
+      <ul className="todo_list"></ul>
+      {props.items.map((item) => (
+        <TodoItem
+          key={item.id}
+          id={item.id}
+          value={item.value}
+          onDelete={props.onDeleteItem}
+        />
+      ))}
     </div>
   );
 }
