@@ -1,9 +1,8 @@
 import "./TodoItem.css";
 
 function TodoItem(props) {
-  const removeItem = (e) => {
+  const removeItem = () => {
     props.onDelete(props.id);
-    console.log(props.id);
 
     // const item = e.target;
 

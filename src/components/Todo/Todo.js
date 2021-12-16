@@ -12,6 +12,11 @@ function Todo(props) {
     props.onNewTodo(todo);
   };
 
+  const getDataId = (todoID) => {
+    console.log(todoID);
+    props.onDeleteTodo(todoID);
+  };
+
   const getFilteredValue = (value) => {
     setFilterValue(value);
     console.log(value);
@@ -20,7 +25,7 @@ function Todo(props) {
   return (
     <div className="todo_container container">
       <NewTodo onSavedData={savedDataHandler} />
-      <TodoList items={props.items} onDeleteItem={props.onDeleteTodo} />
+      <TodoList items={props.items} onDeleteItem={getDataId} />
       <TodoInfo itemsLeft={props.itemsLeft} />
       <TodoFilter onFilterSelected={getFilteredValue} />
     </div>
