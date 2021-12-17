@@ -9,6 +9,7 @@ function TodoList(props) {
           key={item.id}
           id={item.id}
           value={item.value}
+          isCompleted={item.isCompleted}
           onDelete={props.onDeleteItem}
         />
       ))}

@@ -19,13 +19,22 @@ function Todo(props) {
 
   const getFilteredValue = (value) => {
     setFilterValue(value);
-    console.log(value);
   };
+
+  const filteredTodo = props.items.filter((todo) => {
+    if (filterValue === "completed" && todo.isCompleted === true) {
+      return todo;
+    }
+
+    if (filterValue === "all" || filterValue === "active") {
+      return todo;
+    }
+  });
 
   return (
     <div className="todo_container container">
       <NewTodo onSavedData={savedDataHandler} />
-      <TodoList items={props.items} onDeleteItem={getDataId} />
+      <TodoList items={filteredTodo} onDeleteItem={getDataId} />
       <TodoInfo itemsLeft={props.itemsLeft} />
       <TodoFilter onFilterSelected={getFilteredValue} />
     </div>

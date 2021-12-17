@@ -5,9 +5,9 @@ import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 
 const DUMMY_TODOS = [
-  { id: "1", value: "Go to work", isActive: false },
-  { id: "2", value: "Watch a movie", isActive: false },
-  { id: "3", value: "Play Video Games", isActive: false },
+  { id: "1", value: "Go to work", isCompleted: false },
+  { id: "2", value: "Watch a movie", isCompleted: false },
+  { id: "3", value: "Play Video Games", isCompleted: false },
 ];
 
 function App() {
@@ -18,9 +18,10 @@ function App() {
       const updatedTodo = [...prevTodo];
       updatedTodo.unshift({
         value: todo,
-        isActive: false,
+        isCompleted: false,
         id: Math.random().toString(),
       });
+      console.log(updatedTodo);
       return updatedTodo;
     });
   };
