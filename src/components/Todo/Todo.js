@@ -17,6 +17,10 @@ function Todo(props) {
     props.onDeleteTodo(todoID);
   };
 
+  const tickTodo = (todo) => {
+    console.log(todo);
+  };
+
   const getFilteredValue = (value) => {
     setFilterValue(value);
   };
@@ -34,7 +38,11 @@ function Todo(props) {
   return (
     <div className="todo_container container">
       <NewTodo onSavedData={savedDataHandler} />
-      <TodoList items={filteredTodo} onDeleteItem={getDataId} />
+      <TodoList
+        items={filteredTodo}
+        onDeleteItem={getDataId}
+        onTickItem={tickTodo}
+      />
       <TodoInfo itemsLeft={props.itemsLeft} />
       <TodoFilter onFilterSelected={getFilteredValue} />
     </div>

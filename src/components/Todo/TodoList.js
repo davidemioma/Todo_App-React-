@@ -11,6 +11,7 @@ function TodoList(props) {
           value={item.value}
           isCompleted={item.isCompleted}
           onDelete={props.onDeleteItem}
+          onTick={props.onTickItem}
         />
       ))}
     </div>

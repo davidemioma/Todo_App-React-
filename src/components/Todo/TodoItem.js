@@ -2,8 +2,6 @@ import "./TodoItem.css";
 import { useState } from "react";
 
 function TodoItem(props) {
-  const [isCompleted, setIsCompleted] = useState(props.isCompleted);
-
   const removeItem = () => {
     props.onDelete(props.id);
   };
@@ -15,10 +13,8 @@ function TodoItem(props) {
 
     if (item.classList.contains("tick")) {
       parent.classList.toggle("todo_done");
-      setIsCompleted(true);
+      props.onTick(props);
     }
-
-    console.log(isCompleted);
   };
 
   return (
