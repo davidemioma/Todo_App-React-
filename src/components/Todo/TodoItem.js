@@ -12,7 +12,7 @@ function TodoItem(props) {
     const parent = item.parentElement;
 
     if (item.classList.contains("tick")) {
-      parent.classList.toggle("todo_done");
+      parent.classList.add("todo_done");
       props.onTick(props);
     }
   };

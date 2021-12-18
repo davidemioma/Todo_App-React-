@@ -13,12 +13,11 @@ function Todo(props) {
   };
 
   const getDataId = (todoID) => {
-    console.log(todoID);
     props.onDeleteTodo(todoID);
   };
 
   const tickTodo = (todo) => {
-    console.log(todo);
+    props.onTickTodo(todo);
   };
 
   const getFilteredValue = (value) => {
@@ -30,7 +29,11 @@ function Todo(props) {
       return todo;
     }
 
-    if (filterValue === "all" || filterValue === "active") {
+    if (filterValue === "active" && todo.isCompleted === false) {
+      return todo;
+    }
+
+    if (filterValue === "all") {
       return todo;
     }
   });

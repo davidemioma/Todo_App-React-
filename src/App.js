@@ -21,17 +21,19 @@ function App() {
         isCompleted: false,
         id: Math.random().toString(),
       });
-      console.log(updatedTodo);
       return updatedTodo;
     });
   };
 
   const deleteTodo = (todoID) => {
-    console.log(todoID);
     setTodosArr((prevTodo) => {
       const updatedTodo = prevTodo.filter((todo) => todo.id !== todoID);
       return updatedTodo;
     });
+  };
+
+  const tickTodo = (todo) => {
+    console.log(todo);
   };
 
   return (
@@ -42,6 +44,7 @@ function App() {
         items={todosArr}
         itemsLeft={todosArr.length}
         onDeleteTodo={deleteTodo}
+        onTickTodo={tickTodo}
       />
       <Footer />
     </body>
