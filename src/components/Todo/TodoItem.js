@@ -1,5 +1,4 @@
 import "./TodoItem.css";
-import { useState } from "react";
 
 function TodoItem(props) {
   return (

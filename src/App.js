@@ -8,13 +8,7 @@ function App() {
   return (
     <TodoProvider>
       <Header />
-      <Todo
-        onNewTodo={addNewTodo}
-        items={todosArr}
-        itemsLeft={todosArr.length}
-        onDeleteTodo={deleteTodo}
-        onTickTodo={tickTodo}
-      />
+      <Todo />
       <Footer />
     </TodoProvider>
   );

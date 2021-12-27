@@ -37,7 +37,7 @@ function Todo(props) {
     <div className="todo_container container">
       <NewTodo onSavedData={savedDataHandler} />
       <TodoList items={filteredTodo} />
-      <TodoInfo itemsLeft={props.itemsLeft} />
+      <TodoInfo />
       <TodoFilter onFilterSelected={getFilteredValue} />
     </div>
   );
