@@ -10,8 +10,6 @@ function TodoList(props) {
           id={item.id}
           value={item.value}
           isCompleted={item.isCompleted}
-          onDelete={props.onDeleteItem}
-          onTick={props.onTickItem}
         />
       ))}
     </div>
