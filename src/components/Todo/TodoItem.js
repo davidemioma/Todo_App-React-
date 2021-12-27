@@ -5,7 +5,7 @@ function TodoItem(props) {
     props.onDelete(props.id);
   };
 
-  const setTodoToActive = () => {
+  const setTodoToActive = (e) => {
     const item = e.target;
 
     const parent = item.parentElement;

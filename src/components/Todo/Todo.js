@@ -27,7 +27,6 @@ function Todo(props) {
 
   const completeTodo = (todo) => {
     todoCtx.setTodoActive(todo);
-    console.log(todo);
   };
 
   const getFilteredValue = (value) => {
