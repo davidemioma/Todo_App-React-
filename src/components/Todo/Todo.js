@@ -15,7 +15,7 @@ function Todo(props) {
     const todoItem = {
       id: Math.random().toString(),
       value: todo,
-      isActive: false,
+      isCompleted: false,
     };
 
     todoCtx.addTodo(todoItem);
@@ -23,6 +23,11 @@ function Todo(props) {
 
   const removeTodo = (id) => {
     todoCtx.removeTodo(id);
+  };
+
+  const completeTodo = (todo) => {
+    todoCtx.setTodoActive(todo);
+    console.log(todo);
   };
 
   const getFilteredValue = (value) => {
@@ -46,7 +51,11 @@ function Todo(props) {
   return (
     <div className="todo_container container">
       <NewTodo onSavedData={savedDataHandler} />
-      <TodoList items={filteredTodo} onRemoveTodoItem={removeTodo} />
+      <TodoList
+        items={filteredTodo}
+        onRemoveTodoItem={removeTodo}
+        onTodoCompleted={completeTodo}
+      />
       <TodoInfo />
       <TodoFilter onFilterSelected={getFilteredValue} />
     </div>

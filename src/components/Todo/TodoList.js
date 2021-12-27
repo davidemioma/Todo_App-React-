@@ -11,6 +11,7 @@ function TodoList(props) {
           value={item.value}
           isCompleted={item.isCompleted}
           onDelete={props.onRemoveTodoItem}
+          onClick={props.onTodoCompleted}
         />
       ))}
     </div>

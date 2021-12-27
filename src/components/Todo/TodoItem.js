@@ -5,9 +5,20 @@ function TodoItem(props) {
     props.onDelete(props.id);
   };
 
+  const setTodoToActive = () => {
+    const item = e.target;
+
+    const parent = item.parentElement;
+
+    if (item.classList.contains("tick")) {
+      parent.classList.add("todo_done");
+      props.onClick(props);
+    }
+  };
+
   return (
     <li className="todo">
-      <span className="tick">
+      <span onClick={setTodoToActive} className="tick">
         <img src="" alt=""></img>
       </span>
       <p className="todo_item">{props.value}</p>
