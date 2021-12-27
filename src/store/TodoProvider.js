@@ -44,6 +44,16 @@ const todoReducer = (state, action) => {
     };
   }
 
+  if (action.type === "CLEAR_COMPLETED") {
+    const updatedTodo = state.items.filter(
+      (item) => item.isCompleted === false
+    );
+
+    return {
+      items: updatedTodo,
+    };
+  }
+
   return defaultTodoState;
 };
 
@@ -65,11 +75,16 @@ function TodoProvider(props) {
     dispatchTodoAction({ type: "SET_TODO_ACTIVE", item: item });
   };
 
+  const ClearCompletedHandler = () => {
+    dispatchTodoAction({ type: "CLEAR_COMPLETED" });
+  };
+
   const todoContext = {
     items: todoState.items,
     addTodo: addTodoItemHandler,
     removeTodo: removeTodoItemHandler,
     setTodoActive: setTodoActiveHandler,
+    clearCompleted: ClearCompletedHandler,
   };
 
   return (

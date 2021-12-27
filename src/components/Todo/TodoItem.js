@@ -13,11 +13,11 @@ function TodoItem(props) {
     setisCompleted(true);
   };
 
-  const spanClass = `${isCompleted ? "todo_done" : "tick"}`;
+  const liClass = `todo ${isCompleted ? "todo_done" : ""}`;
 
   return (
-    <li className="todo">
-      <span onClick={setTodoToActive} className={spanClass}>
+    <li className={liClass}>
+      <span onClick={setTodoToActive} className="tick">
         <img src="" alt=""></img>
       </span>
       <p className="todo_item">{props.value}</p>
