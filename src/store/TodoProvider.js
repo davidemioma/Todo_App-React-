@@ -3,10 +3,18 @@ import { useReducer } from "react";
 
 const defaultTodoState = {
   items: [],
-  availableItems: items.length,
 };
 
-const todoReducer = (state, action) => {};
+const todoReducer = (state, action) => {
+  if (action.type === "ADD_TODO_ITEM") {
+    const updatedTodo = state.items.concat(action.item);
+    return {
+      items: updatedTodo,
+    };
+  }
+
+  return defaultTodoState;
+};
 
 function TodoProvider(props) {
   const [todoState, dispatchTodoAction] = useReducer(
@@ -14,15 +22,20 @@ function TodoProvider(props) {
     defaultTodoState
   );
 
-  const addTodoItemHandler = (item) => {};
+  const addTodoItemHandler = (item) => {
+    dispatchTodoAction({ type: "ADD_TODO_ITEM", item: item });
+  };
 
-  const removeTodoItemHandler = (id) => {};
+  const removeTodoItemHandler = (id) => {
+    dispatchTodoAction({ type: "REMOVE_TODO_ITEM", id: id });
+  };
 
-  const setTodoActiveHandler = (item) => {};
+  const setTodoActiveHandler = (item) => {
+    dispatchTodoAction({ type: "SET_TODO_ACTIVE", item: item });
+  };
 
   const todoContext = {
-    items: [],
-    availableItems: items.length,
+    items: todoState.items,
     addTodo: addTodoItemHandler,
     removeTodo: removeTodoItemHandler,
     setTodoActive: setTodoActiveHandler,

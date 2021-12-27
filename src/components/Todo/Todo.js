@@ -12,7 +12,13 @@ function Todo(props) {
   const todoCtx = useContext(TodoContext);
 
   const savedDataHandler = (todo) => {
-    todoCtx.addTodo(todo);
+    const todoItem = {
+      id: Math.random().toString(),
+      value: todo,
+      isActive: false,
+    };
+
+    todoCtx.addTodo(todoItem);
   };
 
   const getFilteredValue = (value) => {

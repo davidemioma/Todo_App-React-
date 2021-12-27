@@ -8,7 +8,7 @@ function TodoInfo() {
   return (
     <div className="todo_box info">
       <span>
-        <p className="items_left">{todoCtx.availableItems}</p>
+        <p className="items_left">{todoCtx.items.length}</p>
         <p>items available</p>
       </span>
       <button value="clear" className="clear_completed">
