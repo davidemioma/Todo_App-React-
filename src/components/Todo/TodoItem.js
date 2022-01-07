@@ -2,18 +2,15 @@ import "./TodoItem.css";
 import { useState } from "react";
 
 function TodoItem(props) {
-  const [isCompleted, setisCompleted] = useState(false);
-
   const removeTodoHandler = () => {
     props.onDelete(props.id);
   };
 
   const setTodoToActive = (e) => {
     props.onClick(props);
-    setisCompleted(true);
   };
 
-  const liClass = `todo ${isCompleted ? "todo_done" : ""}`;
+  const liClass = `todo ${props.isCompleted ? "todo_done" : ""}`;
 
   return (
     <li className={liClass}>
